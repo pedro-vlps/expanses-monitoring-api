@@ -1,0 +1,82 @@
+from typing import Any
+
+from src.configs.db_connection import get_db
+from src.models.models import CustomExpensesGroups, Expenses, Users
+
+from src.schemas.custom_expanses_groups_schemas import (
+    CustomExpensesGroupBase,
+    CustomExpensesGroupGet,
+    CustomExpensesGroupPost,
+    CustomExpensesGroupUpdate,
+)
+from src.schemas.users_schema import UserBase, UserGet, UserPost, UserUpdate
+from src.schemas.expanses_schemas import ExpenseBase, ExpenseGet, ExpensePost, ExpenseUpdate
+
+routes_declaration: list[dict[str, Any]] = [
+    {
+        "model_class": Users,
+        "standard_schema": UserBase,
+        "db_session": get_db,
+        "auth_callback": None,
+        "request_post_schema": UserPost,
+        "request_update_schema": UserUpdate,
+        "response_get_schema": UserGet,
+        "response_get_by_id_schema": UserGet,
+        "response_post_schema": UserGet,
+        "response_delete_schema": None,
+        "response_patch_schema": UserGet,
+        "enable_get": True,
+        "enable_get_by_id": True,
+        "enable_post": True,
+        "enable_delete": True,
+        "enable_patch": True,
+        "join_parameters": None,
+        "second_level_join_parameters": None,
+        "route_prefix": "/users",
+        "route_tags": ["users"],
+    },
+    {
+        "model_class": CustomExpensesGroups,
+        "standard_schema": CustomExpensesGroupBase,
+        "db_session": get_db,
+        "auth_callback": None,
+        "request_post_schema": CustomExpensesGroupPost,
+        "request_update_schema": CustomExpensesGroupUpdate,
+        "response_get_schema": CustomExpensesGroupGet,
+        "response_get_by_id_schema": CustomExpensesGroupGet,
+        "response_post_schema": CustomExpensesGroupGet,
+        "response_delete_schema": None,
+        "response_patch_schema": CustomExpensesGroupGet,
+        "enable_get": True,
+        "enable_get_by_id": True,
+        "enable_post": True,
+        "enable_delete": True,
+        "enable_patch": True,
+        "join_parameters": None,
+        "second_level_join_parameters": None,
+        "route_prefix": "/custom-expenses-groups",
+        "route_tags": ["custom-expenses-groups"],
+    },
+    {
+        "model_class": Expenses,
+        "standard_schema": ExpenseBase,
+        "db_session": get_db,
+        "auth_callback": None,
+        "request_post_schema": ExpensePost,
+        "request_update_schema": ExpenseUpdate,
+        "response_get_schema": ExpenseGet,
+        "response_get_by_id_schema": ExpenseGet,
+        "response_post_schema": ExpenseGet,
+        "response_delete_schema": None,
+        "response_patch_schema": ExpenseGet,
+        "enable_get": True,
+        "enable_get_by_id": True,
+        "enable_post": True,
+        "enable_delete": True,
+        "enable_patch": True,
+        "join_parameters": None,
+        "second_level_join_parameters": None,
+        "route_prefix": "/expenses",
+        "route_tags": ["expenses"],
+    },
+]

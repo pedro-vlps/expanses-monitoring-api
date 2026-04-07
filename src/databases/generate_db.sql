@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS users (
   id uuid PRIMARY KEY NOT NULL DEFAULT gen_random_uuid(),
   name TEXT NOT NULL UNIQUE,
   email TEXT NOT NULL UNIQUE,
-  password_hash TEXT NOT NULL,
+  password TEXT NOT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
