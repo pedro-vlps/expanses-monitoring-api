@@ -33,7 +33,7 @@ routes_declaration: list[dict[str, Any]] = [
         "join_parameters": None,
         "second_level_join_parameters": None,
         "route_prefix": "/users",
-        "route_tags": ["users"],
+        "route_tags": ["Users"],
     },
     {
         "model_class": CustomExpensesGroups,
@@ -55,7 +55,7 @@ routes_declaration: list[dict[str, Any]] = [
         "join_parameters": None,
         "second_level_join_parameters": None,
         "route_prefix": "/custom-expenses-groups",
-        "route_tags": ["custom-expenses-groups"],
+        "route_tags": ["Custom Expenses Groups"],
     },
     {
         "model_class": Expenses,
@@ -77,6 +77,6 @@ routes_declaration: list[dict[str, Any]] = [
         "join_parameters": None,
         "second_level_join_parameters": None,
         "route_prefix": "/expenses",
-        "route_tags": ["expenses"],
+        "route_tags": ["Expenses"],
     },
 ]

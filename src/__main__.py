@@ -4,12 +4,16 @@ from api_crud_generate_libary.routers.router import SqlRouter  # type: ignore[im
 
 from src.models import routes_declaration
 
+from src.routers import auth_router
+
 app = FastAPI()
 
 @app.get("/healthy")
 def healthy():
     """Route to check if the API is online."""
     return {"status": "ok"}
+
+app.include_router(auth_router, prefix="", tags=["Authentication"])
 
 for route in routes_declaration:
     item = SqlRouter(

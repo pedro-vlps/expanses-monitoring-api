@@ -1,0 +1,1 @@
+from src.routers.auth_router import auth_router
