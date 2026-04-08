@@ -1,4 +1,8 @@
-﻿## v0.2.0
+﻿## v0.3.0
+
+- Created Login route and Login schemas
+
+## v0.2.0
 
 - Added Schemas files for all tables
 - Added db connection and configs files
@@ -17,6 +21,7 @@
 
 - Installed the API libary
 - Created the first projects setup
+
 
 
 
