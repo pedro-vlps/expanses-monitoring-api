@@ -1,4 +1,8 @@
-﻿## v0.3.0
+﻿## v0.3.1
+
+- Added CORS middleware
+
+## v0.3.0
 
 - Created Login route and Login schemas
 
@@ -21,6 +25,7 @@
 
 - Installed the API libary
 - Created the first projects setup
+
 
 
 
