@@ -9,7 +9,7 @@ class LoginSchema(BaseModel):
         from_attributes = True
         json_schema_extra = {
             "example": {
-                "email": "as@example.com",
-                "password": "Travel123"
+                "email": "teste@email.com",
+                "password": "senha123"
             }
         }
