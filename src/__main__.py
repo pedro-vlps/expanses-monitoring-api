@@ -5,7 +5,7 @@ from api_crud_generate_libary.routers.router import SqlRouter  # type: ignore[im
 
 from src.models import routes_declaration
 
-from src.routers import auth_router
+from src.routers import auth_router, expanses_router
 
 app = FastAPI()
 
@@ -51,3 +51,9 @@ for route in routes_declaration:
         prefix=route["route_prefix"],
         tags=route["route_tags"]
     )
+
+app.include_router(
+    expanses_router,
+    prefix="/expenses",
+    tags=["Expenses"]
+)

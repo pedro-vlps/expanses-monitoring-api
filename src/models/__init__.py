@@ -1,7 +1,7 @@
 from typing import Any
 
 from src.configs.db_connection import get_db
-from src.models.models import CustomExpensesGroups, Expenses, Users
+from src.models.models import CustomExpensesGroups, Expenses # , Users
 
 from src.schemas.custom_expanses_groups_schemas import (
     CustomExpensesGroupBase,
@@ -13,28 +13,28 @@ from src.schemas.users_schema import UserBase, UserGet, UserPost, UserUpdate
 from src.schemas.expanses_schemas import ExpenseBase, ExpenseGet, ExpensePost, ExpenseUpdate
 
 routes_declaration: list[dict[str, Any]] = [
-    {
-        "model_class": Users,
-        "standard_schema": UserBase,
-        "db_session": get_db,
-        "auth_callback": None,
-        "request_post_schema": UserPost,
-        "request_update_schema": UserUpdate,
-        "response_get_schema": UserGet,
-        "response_get_by_id_schema": UserGet,
-        "response_post_schema": UserGet,
-        "response_delete_schema": None,
-        "response_patch_schema": UserGet,
-        "enable_get": True,
-        "enable_get_by_id": True,
-        "enable_post": True,
-        "enable_delete": True,
-        "enable_patch": True,
-        "join_parameters": None,
-        "second_level_join_parameters": None,
-        "route_prefix": "/users",
-        "route_tags": ["Users"],
-    },
+    # {
+    #     "model_class": Users,
+    #     "standard_schema": UserBase,
+    #     "db_session": get_db,
+    #     "auth_callback": None,
+    #     "request_post_schema": UserPost,
+    #     "request_update_schema": UserUpdate,
+    #     "response_get_schema": UserGet,
+    #     "response_get_by_id_schema": UserGet,
+    #     "response_post_schema": UserGet,
+    #     "response_delete_schema": None,
+    #     "response_patch_schema": UserGet,
+    #     "enable_get": True,
+    #     "enable_get_by_id": True,
+    #     "enable_post": True,
+    #     "enable_delete": True,
+    #     "enable_patch": True,
+    #     "join_parameters": None,
+    #     "second_level_join_parameters": None,
+    #     "route_prefix": "/users",
+    #     "route_tags": ["Users"],
+    # },
     {
         "model_class": CustomExpensesGroups,
         "standard_schema": CustomExpensesGroupBase,
