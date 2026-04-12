@@ -1,4 +1,8 @@
-﻿## v0.3.1
+﻿## v0.4.0
+
+- Get by User Id route for expenses
+
+## v0.3.1
 
 - Added CORS middleware
 
@@ -25,6 +29,7 @@
 
 - Installed the API libary
 - Created the first projects setup
+
 
 
 
