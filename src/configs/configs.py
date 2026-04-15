@@ -5,6 +5,7 @@ class Settings(BaseSettings):
     POSTGRES_DB: str
     POSTGRES_USER: str
     POSTGRES_PASSWORD: str
+    OPENAI_API_KEY: str
 
     @property
     def DATABASE_URL(self):

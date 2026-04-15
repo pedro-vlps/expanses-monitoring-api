@@ -1,11 +1,12 @@
 """Main file for the API application."""
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from api_crud_generate_libary.routers.router import SqlRouter  # type: ignore[import]
 
 from src.models import routes_declaration
 
-from src.routers import auth_router, expanses_router
+from src.routers import auth_router, expanses_router, ai_router
 
 app = FastAPI()
 
@@ -17,10 +18,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 @app.get("/healthy")
 def healthy():
     """Route to check if the API is online."""
     return {"status": "ok"}
+
 
 app.include_router(auth_router, prefix="", tags=["Authentication"])
 
@@ -47,13 +50,9 @@ for route in routes_declaration:
     )
 
     app.include_router(
-        item.router,
-        prefix=route["route_prefix"],
-        tags=route["route_tags"]
+        item.router, prefix=route["route_prefix"], tags=route["route_tags"]
     )
 
-app.include_router(
-    expanses_router,
-    prefix="/expenses",
-    tags=["Expenses"]
-)
+app.include_router(expanses_router, prefix="/expenses", tags=["Expenses"])
+
+app.include_router(ai_router, prefix="/ai", tags=["AI Agent"])
